@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edificios</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">UTPL</div>
+    <nav class="menu">
+      <a href="/">Inicio</a>
+      <a href="/edificios">Edificios</a>
+      <a href="/departamentos">Departamentos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="table-section">
+      <h2>Edificios - {{ numero }}</h2>
+
+      <div class="hero-buttons">
+        <a href="/edificios/crear" class="btn primary">+ Nuevo edificio</a>
+      </div>
+
+      <br>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Ciudad</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for e in edificios %}
+          <tr>
+            <td>{{ e['nombre'] }}</td>
+            <td>{{ e['direccion'] }}</td>
+            <td>{{ e['ciudad'] }}</td>
+            <td>{{ e['tipo'] }}</td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="4">No hay edificios registrados todavía.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 UTPL - Taller 13 Inmobiliaria (Flask).</p>
+  </footer>
+
+</body>
+</html>

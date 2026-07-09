@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Edificio</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">UTPL</div>
+    <nav class="menu">
+      <a href="/">Inicio</a>
+      <a href="/edificios">Edificios</a>
+      <a href="/departamentos">Departamentos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Nuevo Edificio</h2>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <p><b>{{ message }}</b></p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <form method="POST">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej. Torre Central" required>
+
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" name="direccion" placeholder="Ej. Av. Universitaria" required>
+
+        <label for="ciudad">Ciudad</label>
+        <input type="text" id="ciudad" name="ciudad" placeholder="Ej. Loja" required>
+
+        <label for="tipo">Tipo</label>
+        <select id="tipo" name="tipo">
+          <option value="residencial">Residencial</option>
+          <option value="comercial">Comercial</option>
+        </select>
+
+        <button type="submit">Guardar edificio</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 UTPL - Taller 13 Inmobiliaria (Flask).</p>
+  </footer>
+
+</body>
+</html>

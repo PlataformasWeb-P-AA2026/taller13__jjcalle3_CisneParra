@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller 13 - Flask</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">UTPL</div>
+    <nav class="menu">
+      <a href="/">Inicio</a>
+      <a href="/edificios">Edificios</a>
+      <a href="/departamentos">Departamentos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-info">
+        <span class="badge">Cliente Flask</span>
+        <h1>Consumo de servicios web</h1>
+        <p>
+          Esta aplicación Flask consume la API REST del proyecto Django
+          (autenticada con token) para listar y crear Edificios y Departamentos.
+        </p>
+        <div class="hero-buttons">
+          <a href="/edificios" class="btn primary">Ver edificios</a>
+          <a href="/departamentos" class="btn secondary">Ver departamentos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 UTPL - Taller 13 Inmobiliaria (Flask).</p>
+  </footer>
+
+</body>
+</html>
