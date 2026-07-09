@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller 13 - Inmobiliaria</title>
+  <link rel="stylesheet" href="{% static 'inmobiliaria/styles.css' %}">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">UTPL</div>
+    <nav class="menu">
+      <a href="{% url 'menu' %}">Inicio</a>
+      <a href="{% url 'lista_edificios' %}">Edificios</a>
+      <a href="{% url 'lista_departamentos' %}">Departamentos</a>
+      <a href="/admin/">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-info">
+        <span class="badge">Taller 13</span>
+        <h1>Gestión de Edificios y Departamentos</h1>
+        <p>
+          Servicio web con Django + Django REST Framework, consumido
+          desde una aplicación Flask.
+        </p>
+        <div class="hero-buttons">
+          <a href="{% url 'lista_edificios' %}" class="btn primary">Ver edificios</a>
+          <a href="{% url 'lista_departamentos' %}" class="btn secondary">Ver departamentos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 UTPL - Taller 13 Inmobiliaria.</p>
+  </footer>
+
+</body>
+</html>

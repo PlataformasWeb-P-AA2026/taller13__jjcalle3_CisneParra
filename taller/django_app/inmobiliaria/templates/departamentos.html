@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Departamentos</title>
+  <link rel="stylesheet" href="{% static 'inmobiliaria/styles.css' %}">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">UTPL</div>
+    <nav class="menu">
+      <a href="{% url 'menu' %}">Inicio</a>
+      <a href="{% url 'lista_edificios' %}">Edificios</a>
+      <a href="{% url 'lista_departamentos' %}">Departamentos</a>
+      <a href="/admin/">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="table-section">
+      <h2>Departamentos registrados - {{ numero_departamentos }}</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Propietario</th>
+            <th>Costo</th>
+            <th>N° Cuartos</th>
+            <th>Edificio</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for d in departamentos %}
+          <tr>
+            <td>{{ d.nombre_propietario }}</td>
+            <td>${{ d.costo }}</td>
+            <td>{{ d.numero_cuartos }}</td>
+            <td>{{ d.edificio.nombre }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="4">No hay departamentos registrados todavía.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 UTPL - Taller 13 Inmobiliaria.</p>
+  </footer>
+
+</body>
+</html>
